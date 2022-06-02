@@ -1,0 +1,1 @@
+const eventButton=document.querySelector(".eventButton");let countClickButton=0;function Popup(){countClickButton++,document.querySelector(".counting").innerText=countClickButton+" times",5<countClickButton&&alert("To już ponad 5")}eventButton.addEventListener("click",Popup);
