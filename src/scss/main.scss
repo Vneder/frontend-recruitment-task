@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "_colors.scss";
 
 * {
     margin: 0;
@@ -8,10 +9,40 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: white;
+    color: $dark;
 }
 
 .main-module {
-    width: 1440px;
+    background-color: #fff;
+}
+
+.main-module--img-hero {
+    position: absolute;
+    top: 96px;
+    left: 230px;
+    width: 505px;
+    height: 330px;
+}
+
+.main-module--content {
+    position: absolute;
+    left: 830px;
+    top: 136px;
+    width: 380px;
+    height: 250px;
+
+}
+
+.main-module--content h1 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.main-module--content p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
 }
 
 .eventButton,
@@ -20,7 +51,7 @@ body {
     font-size: 16px;
     line-height: 16px;
     font-weight: 700;
-    background-color: #E4C1AE;
+    background-color: $primary;
     border: none;
     border-radius: 32px;
     padding: 16px 40px;
