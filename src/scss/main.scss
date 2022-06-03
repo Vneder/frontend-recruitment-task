@@ -56,10 +56,10 @@ body {
     height: 210px;
     z-index: 2;
     padding: 50px;
-    display: none;
 }
 
 .closeButton {
+    cursor: pointer;
     position: absolute;
     right: 46px;
     top: 30px;
