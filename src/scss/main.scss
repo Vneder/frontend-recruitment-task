@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
 @import "_colors.scss";
 
 * {
@@ -9,7 +9,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: white;
+    background-color: $bg;
     color: $dark;
 }
 
@@ -37,12 +37,14 @@ body {
 .main-module--content h1 {
     font-size: 42px;
     font-weight: 700;
+    margin-bottom: 2rem;
 }
 
 .main-module--content p {
     font-size: 16px;
     line-height: 24px;
     font-weight: 300;
+    margin-bottom: 3rem;
 }
 
 .eventButton,
@@ -66,15 +68,20 @@ body {
     visibility: hidden;
 }
 
-.popup {
-    display: none;
+.overlay {
     position: fixed;
+    opacity: 0;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 1;
-    background: rgba(18, 18, 18, 0.5);
+    background-color: rgba(18, 18, 18, .5);
+    pointer-events: none;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
 }
 
 .content {
@@ -85,7 +92,7 @@ body {
     background-color: #fff;
     width: 920px;
     height: 210px;
-    z-index: 2;
+    z-index: 3;
     padding: 50px;
 }
 

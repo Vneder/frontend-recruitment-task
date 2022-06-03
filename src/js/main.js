@@ -3,12 +3,14 @@ const content = document.querySelector(".content");
 const eventButton = document.querySelector(".eventButton");
 const resetButton = document.querySelector(".resetButton");
 const closeButton = document.querySelector(".closeButton");
+const overlay = document.querySelector(".overlay");
 let countClickButton = 0;
 //localStorage dodac
 
 function closePopup() {
     popup.classList.remove("active");
     content.classList.remove("active");
+    overlay.classList.remove("active");
 }
 
 function resetCount() {
@@ -22,6 +24,7 @@ function Popup() {
 
     popup.classList.add("active");
     content.classList.add("active");
+    overlay.classList.add("active");
 
     document.querySelector(".counting").innerText = countClickButton + " times";
     if (countClickButton > 5) {
@@ -29,6 +32,7 @@ function Popup() {
     }
 }
 
+overlay.addEventListener("click", closePopup)
 eventButton.addEventListener("click", Popup);
 resetButton.addEventListener("click", resetCount);
 closeButton.addEventListener("click", closePopup);
