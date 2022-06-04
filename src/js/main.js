@@ -1,38 +1,49 @@
-const popup = document.querySelector(".popup");
 const content = document.querySelector(".content");
 const eventButton = document.querySelector(".eventButton");
 const resetButton = document.querySelector(".resetButton");
 const closeButton = document.querySelector(".closeButton");
 const overlay = document.querySelector(".overlay");
-let countClickButton = 0;
-//localStorage dodac
+
+let counter = 0;
+
+if (localStorage.getItem("counterMem") !== null) {
+    counter = localStorage.getItem("counterMem");
+}
+
+function openPopup() {
+    counter++;
+
+    localStorage.setItem("counterMem", counter);
+
+    content.classList.add("active");
+    overlay.classList.add("active");
+
+    document.querySelector(".counting").innerHTML = counter + " times";
+    if (counter > 5) {
+        resetButton.style.visibility = "visible";
+    }
+}
 
 function closePopup() {
-    popup.classList.remove("active");
     content.classList.remove("active");
     overlay.classList.remove("active");
 }
 
 function resetCount() {
-    countClickButton = 0;
+    counter = 0;
+    localStorage.setItem("counterMem", 0);
+
     resetButton.style.visibility = "hidden";
-    document.querySelector(".counting").innerText = countClickButton + " times";
+
+    document.querySelector(".counting").innerText = counter + " times";
 }
 
-function Popup() {
-    countClickButton++;
+// Open popup
+eventButton.addEventListener("click", openPopup);
 
-    popup.classList.add("active");
-    content.classList.add("active");
-    overlay.classList.add("active");
-
-    document.querySelector(".counting").innerText = countClickButton + " times";
-    if (countClickButton > 5) {
-        resetButton.style.visibility = "visible";
-    }
-}
-
-overlay.addEventListener("click", closePopup)
-eventButton.addEventListener("click", Popup);
+// Reset counter
 resetButton.addEventListener("click", resetCount);
+
+// Close popup
 closeButton.addEventListener("click", closePopup);
+overlay.addEventListener("click", closePopup)
