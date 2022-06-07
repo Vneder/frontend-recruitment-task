@@ -1,0 +1,40 @@
+.main-module {
+    background-color: $bg;
+    width: 100%vw;
+    position: relative;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 95px;
+    justify-content: center;
+
+
+    img {
+        width: 505px;
+        height: 330px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 380px;
+        height: 250px;
+
+        .title {
+            margin-top: 40px;
+            font-size: 42px;
+            line-height: 50px;
+            font-weight: 700;
+        }
+
+        .copy {
+            line-height: 150%;
+            font-weight: 300;
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+        }
+    }
+}

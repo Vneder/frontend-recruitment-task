@@ -1,7 +1,7 @@
-const content = document.querySelector(".content");
-const eventButton = document.querySelector(".eventButton");
-const resetButton = document.querySelector(".resetButton");
-const closeButton = document.querySelector(".closeButton");
+const content = document.querySelector(".popupContent");
+const eventBtn = document.querySelector(".eventBtn");
+const resetBtn = document.querySelector(".resetBtn");
+const closeBtn = document.querySelector(".closeBtn");
 const overlay = document.querySelector(".overlay");
 
 let counter = 0;
@@ -18,9 +18,9 @@ function openPopup() {
     content.classList.add("active");
     overlay.classList.add("active");
 
-    document.querySelector(".counting").innerHTML = counter + " times";
+    document.querySelector(".count").innerHTML = counter + " times";
     if (counter > 5) {
-        resetButton.style.visibility = "visible";
+        resetBtn.style.visibility = "visible";
     }
 }
 
@@ -33,17 +33,22 @@ function resetCount() {
     counter = 0;
     localStorage.setItem("counterMem", 0);
 
-    resetButton.style.visibility = "hidden";
+    resetBtn.style.visibility = "hidden";
 
-    document.querySelector(".counting").innerText = counter + " times";
+    document.querySelector(".count").innerText = counter + " times";
 }
 
 // Open popup
-eventButton.addEventListener("click", openPopup);
+eventBtn.addEventListener("click", openPopup);
 
 // Reset counter
-resetButton.addEventListener("click", resetCount);
+resetBtn.addEventListener("click", resetCount);
 
 // Close popup
-closeButton.addEventListener("click", closePopup);
-overlay.addEventListener("click", closePopup)
+closeBtn.addEventListener("click", closePopup);
+overlay.addEventListener("click", closePopup);
+document.onkeydown = function (e) {
+    if (e.key == "Escape") {
+        closePopup();
+    }
+}
