@@ -21,11 +21,35 @@
     }
 }
 
+.eventBtn {
+    @media (max-width: 986px) {
+        position: relative;
+        left: 50%;
+        transition: none;
+        transform: translateX(-50%);
+    }
+}
+
 .resetBtn {
     visibility: hidden;
     position: absolute;
-    left: 75%;
+    left: 60%;
     top: 25%;
+
+    @media (max-width: 1086px) {
+        left: 65%;
+    }
+
+    @media (max-width: 986px) {
+        transform: translateX(-50%);
+        transition: none;
+        left: 50%;
+        top: 50%;
+
+        &:hover {
+            transform: translateX(-50%) scale(1);
+        }
+    }
 }
 
 .closeBtn {
@@ -51,5 +75,10 @@
 
     &:before {
         transform: rotate(-45deg);
+    }
+
+    @media (max-width: 986px) {
+        right: 40px;
+        top: 35px;
     }
 }

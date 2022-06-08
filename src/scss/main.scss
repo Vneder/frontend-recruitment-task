@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
-@import "_colors.scss";
+@import "_vars.scss";
 @import "_reset.scss";
 @import "_buttons.scss";
 @import "_module.scss";
@@ -8,23 +8,5 @@
 body {
     font-family: 'Roboto', sans-serif;
     color: $dark;
-    font-size: 16px;
-}
-
-@media (max-width: 1280px) {
-    .main-module {
-        top: 8vh;
-    }
-}
-
-//Telefon
-
-@media (max-width: 1024px) {
-    .main-module {
-        top: 6vh;
-    }
-}
-
-@media (max-width: 414px) {
-    // NOWY KOD CSS
+    font-size: $desktop-copy;
 }
