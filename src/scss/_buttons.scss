@@ -27,6 +27,10 @@
         left: 50%;
         transition: none;
         transform: translateX(-50%);
+
+        &:hover {
+            transform: translateX(-50%) scale(1);
+        }
     }
 }
 
