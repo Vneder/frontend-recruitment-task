@@ -1,5 +1,8 @@
 # Zadanie rekrutacyjne GravityGlobal na frontend developera
 
+## Live
+https://vneder.github.io/frontend-recruitment-task/
+
 ## Informacje wstępne
 Zadanie jest przeznaczone na każdy poziom umiejętności developera, dzieli się na poszczególne zadania,
 które są stopniowo coraz trudniejsze. Każdy powinien zrobić test na tyle ile aktualnie potrafi, gdyż
